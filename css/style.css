@@ -39,6 +39,8 @@ button {
 /* #region header */
 
 .header {
+    margin: 0 auto;
+    max-width: 1440px;
     border-bottom: 1px solid #e7e9fc;
 }
 
@@ -85,6 +87,7 @@ span.logo_style {
 
 
 .item-nav-link {
+    position: relative;
     padding: 24px 0;
     font-weight: 500;
     font-size: 16px;
@@ -96,6 +99,21 @@ span.logo_style {
 .item-nav-link:hover,
 .item-nav-link:focus {
     color: #404bbf;
+}
+
+.current {
+    color: #404bbf; 
+}
+
+.current::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    border-radius: 2px;
+    width: 48px;
+    height: 4px;
+    background-color: #404bbf;
 }
 
 .address-header {
@@ -128,9 +146,15 @@ span.logo_style {
 
 /* #region hero */
 .hero {
+    margin: 0 auto;
+    max-width: 1440px;
     background-color: #2e2f42;
     padding: 188px 0;
     height: 600px;
+    background-image: linear-gradient( rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), 
+    url(../images/hero/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .hero .hero-container {
@@ -204,6 +228,23 @@ span.logo_style {
     width: calc((100% - 72px) / 4);
 }
 
+.icon-block {
+    border: 1px solid #8e8f99;
+    border-radius: 4px;
+    width: 264px;
+    height: 112px;
+    background: #f4f4fd;
+    margin-bottom: 8px;
+}
+
+.icon-link {
+    display: block;
+    padding: 24px 100px;
+}
+
+.icon {
+    fill: none;
+}
 
 .features-item-title {
     font-weight: 500;
@@ -264,6 +305,12 @@ span.logo_style {
     flex-direction: column;
     gap: 32px;
     width: calc((100% - 72px) / 4);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.team-list-title:hover {
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .team-info {
@@ -288,6 +335,41 @@ span.logo_style {
     color: #434455;
 }
 
+.icon-container {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 12px;
+}
+
+
+.icon-team {
+    justify-content: center;
+    gap: 24px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: #4d5ae5;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.icon-team:hover {
+    background-color:#4d5ae5;;
+    transform: scale(1.1);
+}
+
+.icon-team-link {
+    fill: #fff;
+    width: 20px;
+    height: 20px;
+}
+
+.icon-team:hover .icon-team-link {
+    fill: #fff;
+}
 
 /* #endregion team */
 
@@ -318,8 +400,35 @@ span.logo_style {
 
 
 .portfolio-list-title{
+    position: relative;
     border: 1px solid #e7e9fc;
     width: calc((100% - 48px) / 3);
+}
+
+.portfolio-list-title:hover .overlay{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.portfolio-block {
+    padding: 32px, 40px;
+}
+
+.overlay {
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 101%;
+    height: 75%;
+    background-color: #404bbf;
+    color: #fff;
+    overflow: hidden;
+    padding: 32px;
+    opacity: 0;
+    transform: translateY(100%);
 }
 
 .portfolio-item-container{
@@ -352,9 +461,18 @@ span.logo_style {
 .footer {
     background-color: #2e2f42;
     padding: 100px 0;
+    margin: 0 auto;
+    max-width: 1440px;
 }
-.footer-container {
 
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer-info {
+    max-width: 264px;
 }
 
 .logo-footer {
@@ -380,7 +498,57 @@ span.logo_style {
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
+    color: #fff;
+    margin-bottom: 16px;
+}
+
+.footer-social {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+}
+
+.footer-social-title {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
     color: #f4f4fd;
+    margin: 0 0 16px 0;
+}
+
+.social-icons {
+    display: flex;
+    gap: 16px;
+}
+
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: #4d5ae5;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.social-icon:hover {
+    background-color: #4d5ae5;
+    transform: scale(1.1);
+}
+
+.social-icon svg {
+    fill: #fff;
+    width: 24px;
+    height: 24px;
+    transition: fill 0.3s ease;
+}
+
+.social-icon:hover svg {
+    fill: #fff;
 }
 
 /* #endregion Footer */
