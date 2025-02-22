@@ -160,6 +160,7 @@ span.logo_style {
     url(../images/hero/bg.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
 }
 
 .hero .hero-container {
@@ -194,7 +195,7 @@ span.logo_style {
     border-radius: 4px;
     border: none;
     margin: 45px 0 auto;
-
+    transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);;
 }
 
 .hero-btn:hover,
@@ -209,6 +210,12 @@ span.logo_style {
 .features {
     background-color: #fff;
     padding: 120px 0;
+}
+
+.features-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .visually-hidden {
@@ -234,6 +241,9 @@ span.logo_style {
 }
 
 .icon-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: 1px solid #8e8f99;
     border-radius: 4px;
     width: 264px;
@@ -242,12 +252,9 @@ span.logo_style {
     margin-bottom: 8px;
 }
 
-.icon-link {
-    display: block;
-    padding: 24px 100px;
-}
-
 .icon {
+    width: 64px;
+    height: 64px;
     fill: none;
 }
 
