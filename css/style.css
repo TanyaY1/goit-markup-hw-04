@@ -345,10 +345,10 @@ span.logo_style {
     color: #434455;
 }
 
-.social-container {
-    display: flex;
-    justify-content: center;
-}
+/* .social-container { */
+    /* display: flex; */
+    /* justify-content: center; */
+/* } */
 
 .social-list {
     display: flex;
