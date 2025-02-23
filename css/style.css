@@ -345,6 +345,11 @@ span.logo_style {
     color: #434455;
 }
 
+.social-container {
+    display: flex;
+    justify-content: center;
+}
+
 .social-list {
     display: flex;
     justify-content: center;
@@ -531,7 +536,7 @@ span.logo_style {
     margin: 0 0 16px 0;
 }
 
-.social-list {
+.social-list-footer {
     display: flex;
     gap: 16px;
     list-style: none;
